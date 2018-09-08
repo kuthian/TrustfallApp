@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kapp.TrustFall">
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/notification_icon"
+        android:label="TrustFall"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.kapp.TrustFall.MainActivity"
+                  android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.kapp.TrustFall.EmergencyContacts"
+            android:label="Emergency Contacts"
+            android:parentActivityName="com.kapp.TrustFall.MainActivity" />
+        <activity android:name="com.kapp.TrustFall.AlertSettings"
+            android:label="Alert Settings"
+            android:parentActivityName="com.kapp.TrustFall.MainActivity" />
+        <activity
+                android:name="com.kapp.TrustFall.client.ClientActivity"
+                android:parentActivityName="com.kapp.TrustFall.MainActivity"
+                android:label="@string/bluetooth_client"
+                android:windowSoftInputMode="stateHidden"/>
+
+    </application>
+
+</manifest>
